@@ -1,0 +1,63 @@
+.popular__container {
+}
+.popular {
+  padding: clamp(1.25rem, 0.568rem + 3.41vw, 3.125rem) 0;
+  background: rgb(241, 201, 201) url("../../images/bg-desktop-light.jpg") center
+    center/cover no-repeat;
+  height: 200px;
+}
+.popular-slide {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.popular__title {
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 1.26;
+  letter-spacing: 1.01rem;
+  text-transform: capitalize;
+}
+.popular-slide__picture {
+}
+.popular-slide__text {
+}
+.popular-slide__title {
+}
+.popular-slide__desc {
+}
+.title {
+}
+.popular-slide__labels {
+  display: flex;
+  gap: 20px;
+}
+.popular-slide__label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.popular__slider {
+  //   margin-top: 40px;
+}
+.swiper {
+  overflow: hidden;
+}
+.swiper-wrapper {
+  display: inline-flex;
+}
+
+.swiper-slide {
+}
+
+.swiper-pagination {
+}
+
+.swiper-scrollbar {
+}
+.swiper__buttons {
+}
+.swiper-button-prev {
+}
+.swiper-button-next {
+}

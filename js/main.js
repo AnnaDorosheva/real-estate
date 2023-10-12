@@ -1,7 +1,6 @@
 const menu = document.querySelector(".js-burger");
 const header = document.querySelector(".header");
 
-
 // Бургер-меню, скрываем/открываем:
 document.addEventListener("DOMContentLoaded", togleBurgerMenu);
 
@@ -10,3 +9,5 @@ function togleBurgerMenu() {
     header.classList.toggle("open");
   });
 }
+
+
