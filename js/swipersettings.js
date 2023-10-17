@@ -1,11 +1,9 @@
 // SWIPER
 const swiper = new Swiper(".js-popular-slider", {
-    // direction: "horizontal",
     slidesPerView: 3,
     loop: true,
     speed: 1500,
-    // effect: "fade",
-    spaceBetween: 20,
+    // spaceBetween: 20,
 
     // If we need pagination
     pagination: {
@@ -20,7 +18,7 @@ const swiper = new Swiper(".js-popular-slider", {
     },
     // Autoplay
   
-    autoplay: { delay: 5000 },
+    // autoplay: { delay: 5000 },
 
       // Default parameters
   slidesPerView: 1,
@@ -38,7 +36,7 @@ const swiper = new Swiper(".js-popular-slider", {
       spaceBetween: 30
     },
     // when window width is >= 640px
-    640: {
+    992: {
       slidesPerView: 3,
       spaceBetween: 40
     }

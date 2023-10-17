@@ -1,7 +1,6 @@
 .container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 15px;
 }
 .header {
   box-shadow: 0px 4px 21px -1px rgba(34, 60, 80, 1.13);
@@ -10,19 +9,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 0;
+  padding: 10px 20px;
 }
 .logo {
   display: block;
-}
-.logo__img {
-  width: 100px;
+  max-width: 100px;
   padding: 10px;
 
-  @media (max-width: 992px) {
-    width: 70px;
+  &img {
+    max-width: 100%;
   }
 }
+
 .menu__list {
   display: flex;
   align-items: center;
@@ -30,11 +28,38 @@
   padding: 0;
   margin: 0;
 }
+
 .menu__item:not(:last-child) {
-  margin-right: 20px;
+  margin-right: 26px;
 }
 .menu__link {
-  font-size: 16px;
+  position: relative;
+  font-weight: 600;
+  font-size: 18px;
+  text-decoration: none;
+  transition: color 0.4s;
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    height: 3px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(94, 111, 238);
+    transition: color 0.6s;
+    opacity: 0;
+    visibility: hidden;
+  }
+  @media (any-hover: hover) {
+    &:hover {
+      color: rgb(45, 48, 241);
+      &::before {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
 }
 
 /* Burger-menu */
@@ -86,19 +111,19 @@
     width: 350px;
     left: -350px;
     top: 0;
-    background-color: rgb(87, 93, 99);
+    background-color: rgb(58, 86, 117);
     padding: 75px 20px 20px 20px;
     transition: transform 0.5s;
   }
   .menu__list {
     display: block;
+    padding-top: 15px;
   }
   .menu__link {
     display: block;
-    font-size: 21px;
+    font-size: 20px;
     padding: 10px 0px;
     color: rgb(250, 248, 248);
-    text-decoration: none;
   }
   .header.open .menu {
     transform: translateX(100%);
