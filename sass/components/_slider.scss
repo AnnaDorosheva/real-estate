@@ -4,6 +4,9 @@
 .popular {
   background: url("../../images/bg-slider.jpg") center center/cover no-repeat;
   height: 400px;
+  @media (max-width: 320px) {
+    height: 360px;
+  }
 }
 .popular-slide {
   display: flex;
@@ -23,7 +26,12 @@
   top: 0;
   left: 0;
 }
-.popular-slide__text {padding: 0 4px;
+.popular-slide__head {
+  display: flex;
+  justify-content: space-between;
+}
+.popular-slide__text {
+  padding: 0 4px;
 }
 .popular-slide__title {
   margin: 0;
@@ -43,9 +51,9 @@
 .popular-slide__label {
   display: flex;
   align-items: center;
-
   gap: 4px;
 }
+
 .popular__slider {
 }
 .swiper {
@@ -64,16 +72,22 @@
 .swiper-scrollbar {
 }
 .popular-slide__button {
-  padding: 4px;
+  font-size: 14px;
+  padding: 6px;
   font-weight: 600;
-  border: 2px solid rgb(36, 36, 36);
-  color: black;
-  background-color: transparent;
+  border: 1px solid rgb(36, 36, 36);
+  color: $bg-color;
+  background-color: $btn-color;
+  transition: opasity 0.4s;
+  margin-left: auto;
   @media (any-hover: hover) {
     &:hover {
-      background-color: $btn-color;
+      opacity: 0.6;
     }
   }
+}
+.popular-slide__page {
+  color: $bg-color;
 }
 .slider__buttons {
 }

@@ -1,0 +1,8 @@
+.catalog__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 1360px;
+  background-color: $bg-color;
+}
+.card__item {width: 300px; padding: 4px; border: 1px solid gray; overflow: hidden;}
