@@ -1,19 +1,29 @@
 $bg-color: rgb(235, 242, 244);
 $btn-color: rgb(94, 105, 138);
-
+$white-text-color: rgb(250, 248, 248);
+$link-color: rgb(94, 111, 238);
 *img {
   //   max-width: 100%;
   //   background-repeat: no-repeat;
   //   background-size: cover;
   //   background-position: center;
-//   width: 100%;
-//   height: 100%;
-//   object-fit: cover;
+  //   width: 100%;
+  //   height: 100%;
+  //   object-fit: cover;
 }
-
+h2 {
+  font-size: 30px;
+  text-align: center;
+  letter-spacing: 0.25rem;
+}
+h3 {
+  text-align: center;
+  letter-spacing: 0.2rem;
+  margin: 0;
+  padding: 0;
+}
 .menu-text {
   font-family: "Work Sans";
   font-weight: 500;
   font-size: 18px;
-  text-transform: capitalize;
 }

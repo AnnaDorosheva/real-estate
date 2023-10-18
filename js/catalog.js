@@ -13,7 +13,7 @@ const makeAppartmentMarckup = ({
 }) => {
   return `        <li class="card__item">
  <h3>${city}</h3>
-<div class="card__img"><img src="${img}"
+<div class="card__imgwraper"><img class="card__img" src="${img}"
 alt="like"
 width="300""/></div><h4 class="popular-slide__title">${title}</h4><div class="popular-slide__head">
 <p class="card__price">${price}$</p>
@@ -25,7 +25,8 @@ width="300""/></div><h4 class="popular-slide__title">${title}</h4><div class="po
 </div>
 
 <p class="card__description">${description}<span>${meters}</span></p>
-<span>${id}</span>
+<span>id: ${id}</span>
+
 </li>`;
 };
 

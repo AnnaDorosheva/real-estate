@@ -245,6 +245,10 @@ summary {
   display: list-item;
 }
 
+a {
+  text-decoration: none;
+}
+
 .container {
   max-width: 1400px;
   margin: 0 auto;
@@ -298,13 +302,14 @@ summary {
   margin: 0;
   padding: 0;
   background-color: rgb(94, 111, 238);
-  transition: color 0.6s;
+  transition: color 0.6s, opacity 0.6s;
   opacity: 0;
   visibility: hidden;
 }
 @media (any-hover: hover) {
   .menu__link:hover {
     color: rgb(45, 48, 241);
+    opacity: 0.7;
   }
   .menu__link:hover::before {
     opacity: 1;
@@ -394,6 +399,11 @@ summary {
   background: url("../../images/bg-slider.jpg") center center/cover no-repeat;
   height: 400px;
 }
+@media (max-width: 320px) {
+  .popular {
+    height: 360px;
+  }
+}
 
 .popular-slide {
   display: flex;
@@ -416,6 +426,11 @@ summary {
   left: 0;
 }
 
+.popular-slide__head {
+  display: flex;
+  justify-content: space-between;
+}
+
 .popular-slide__text {
   padding: 0 4px;
 }
@@ -435,6 +450,11 @@ summary {
   flex-wrap: wrap;
   gap: 20px;
 }
+@media (max-width: 660px) {
+  .popular-slide__labels {
+    justify-content: center;
+  }
+}
 
 .popular-slide__label {
   display: flex;
@@ -451,16 +471,23 @@ summary {
 }
 
 .popular-slide__button {
-  padding: 4px;
+  font-size: 14px;
+  padding: 6px;
   font-weight: 600;
-  border: 2px solid rgb(36, 36, 36);
-  color: black;
-  background-color: transparent;
+  border: 1px solid rgb(36, 36, 36);
+  color: rgb(235, 242, 244);
+  background-color: rgb(94, 105, 138);
+  transition: opasity 0.4s;
+  margin-left: auto;
 }
 @media (any-hover: hover) {
   .popular-slide__button:hover {
-    background-color: rgb(93, 107, 148);
+    opacity: 0.6;
   }
+}
+
+.popular-slide__page {
+  color: rgb(235, 242, 244);
 }
 
 .swiper-button-prev {
@@ -469,4 +496,19 @@ summary {
 
 .swiper-button-next {
   color: aliceblue;
+}
+
+.catalog__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 1360px;
+  background-color: rgb(235, 242, 244);
+}
+
+.card__item {
+  width: 300px;
+  padding: 4px;
+  border: 1px solid gray;
+  overflow: hidden;
 }/*# sourceMappingURL=main.css.map */
