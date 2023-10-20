@@ -1,6 +1,6 @@
 export default [
   {
-    city: "Mersin",
+    city: "Аланья",
     title: "Appartment",
     img: "./../images/villa1.jpg",
     description:
@@ -10,7 +10,7 @@ export default [
     id: 1
   },
   {
-    city: "Mersin",
+    city: "Мерсин",
     title: "Appartment",
     img: "./../images/villa2.jpg",
     description:
@@ -20,7 +20,7 @@ export default [
     id: 2
   },
   {
-    city: "Mersin",
+    city: "Мерсин",
     title: "Appartment",
     img: "./../images/villa3.jpg",
     description:
@@ -30,7 +30,7 @@ export default [
     id: 3
   },
   {
-    city: "Mersin",
+    city: "Аланья",
     title: "Appartment",
     img: "./../images/villa4.jpg",
     description:
@@ -50,7 +50,7 @@ export default [
     id: 5
   },
   {
-    city: "Mersin",
+    city: "Мерсин",
     title: "Appartment",
     img: "./../images/villa2.jpg",
     description:
@@ -60,7 +60,7 @@ export default [
     id: 6
   },
   {
-    city: "Mersin",
+    city: "Северный Кипр",
     title: "Appartment",
     img: "./../images/villa4.jpg",
     description:
@@ -70,7 +70,7 @@ export default [
     id: 7
   },
   {
-    city: "Mersin",
+    city: "Северный Кипр",
     title: "Appartment",
     img: "./../images/villa2.jpg",
     description:
@@ -80,7 +80,7 @@ export default [
     id: 8
   },
   {
-    city: "Mersin",
+    city: "Мерсин",
     title: "Appartment",
     img: "./../images/villa3.jpg",
     description:
@@ -88,5 +88,114 @@ export default [
     price: 77000,
     meters: 70,
     id: 9
+  },
+  {
+    city: "Мерсин",
+    title: "Appartment",
+    img: "./../images/villa1.jpg",
+    description:
+      "Новый проект ЖК, будет располагаться в одном из крупнейших районов Мерсина – Эрдемли. Жилой комплекс будет иметь огороженную и благоустроенную территорию, с круглосуточной охраной. ",
+    price: 77000,
+    meters: 70,
+    id: 10
+  },
+  {
+    city: "Северный Кипр",
+    title: "Appartment",
+    img: "./../images/villa2.jpg",
+    description:
+      "Новый проект ЖК, будет располагаться в одном из крупнейших районов Мерсина – Эрдемли. Жилой комплекс будет иметь огороженную и благоустроенную территорию, с круглосуточной охраной. ",
+    price: 77000,
+    meters: 70,
+    id: 11
+  },
+  {
+    city: "Мерсин",
+    title: "Appartment",
+    img: "./../images/villa3.jpg",
+    description:
+      "Новый проект ЖК, будет располагаться в одном из крупнейших районов Мерсина – Эрдемли. Жилой комплекс будет иметь огороженную и благоустроенную территорию, с круглосуточной охраной. ",
+    price: 77000,
+    meters: 70,
+    id: 12
+  },  {
+    city: "Мерсин",
+    title: "Appartment",
+    img: "./../images/villa2.jpg",
+    description:
+      "Новый проект ЖК, будет располагаться в одном из крупнейших районов Мерсина – Эрдемли. Жилой комплекс будет иметь огороженную и благоустроенную территорию, с круглосуточной охраной. ",
+    price: 77000,
+    meters: 70,
+    id: 13
+  },
+  {
+    city: "Аланья",
+    title: "Appartment",
+    img: "./../images/villa1.jpg",
+    description:
+      "Новый проект ЖК, будет располагаться в одном из крупнейших районов Мерсина – Эрдемли. Жилой комплекс будет иметь огороженную и благоустроенную территорию, с круглосуточной охраной. ",
+    price: 77000,
+    meters: 70,
+    id: 14
+  },
+  {
+    city: "Аланья",
+    title: "Appartment",
+    img: "./../images/villa2.jpg",
+    description:
+      "Новый проект ЖК, будет располагаться в одном из крупнейших районов Мерсина – Эрдемли. Жилой комплекс будет иметь огороженную и благоустроенную территорию, с круглосуточной охраной. ",
+    price: 77000,
+    meters: 70,
+    id: 15
+  },
+  {
+    city: "Аланья",
+    title: "Appartment",
+    img: "./../images/villa3.jpg",
+    description:
+      "Новый проект ЖК, будет располагаться в одном из крупнейших районов Мерсина – Эрдемли. Жилой комплекс будет иметь огороженную и благоустроенную территорию, с круглосуточной охраной. ",
+    price: 77000,
+    meters: 70,
+    id: 16
+  }, 
+  {
+    city: "Аланья",
+    title: "Appartment",
+    img: "./../images/villa1.jpg",
+    description:
+      "Новый проект ЖК, будет располагаться в одном из крупнейших районов Мерсина – Эрдемли. Жилой комплекс будет иметь огороженную и благоустроенную территорию, с круглосуточной охраной. ",
+    price: 77000,
+    meters: 70,
+    id: 17
+  },
+  {
+    city: "Аланья",
+    title: "Appartment",
+    img: "./../images/villa2.jpg",
+    description:
+      "Новый проект ЖК, будет располагаться в одном из крупнейших районов Мерсина – Эрдемли. Жилой комплекс будет иметь огороженную и благоустроенную территорию, с круглосуточной охраной. ",
+    price: 77000,
+    meters: 70,
+    id: 18
+  },
+  {
+    city: "Аланья",
+    title: "Appartment",
+    img: "./../images/villa3.jpg",
+    description:
+      "Новый проект ЖК, будет располагаться в одном из крупнейших районов Мерсина – Эрдемли. Жилой комплекс будет иметь огороженную и благоустроенную территорию, с круглосуточной охраной. ",
+    price: 77000,
+    meters: 70,
+    id: 19
+  },
+  {
+    city: "Аланья",
+    title: "Appartment",
+    img: "./../images/villa3.jpg",
+    description:
+      "Новый проект ЖК, будет располагаться в одном из крупнейших районов Мерсина – Эрдемли. Жилой комплекс будет иметь огороженную и благоустроенную территорию, с круглосуточной охраной. ",
+    price: 77000,
+    meters: 70,
+    id: 20
   },
 ];

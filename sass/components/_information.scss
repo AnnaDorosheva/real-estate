@@ -3,7 +3,6 @@
   flex-wrap: wrap;
   justify-content: space-between;
   background-color: $bg-color;
-  // background-color: aqua;
   @media (min-width: 320px) {
     max-width: 479px;
   }
@@ -21,7 +20,7 @@
   overflow: hidden;
   margin-bottom: 30px;
   overflow: hidden;
-  background-color: rgb(239, 238, 237);
+  background-color: rgb(168, 167, 166);
   border-radius: 10px;
   @media (min-width: 320px) {
     max-width: 90%;
@@ -30,4 +29,7 @@
     max-width: 48%;
   }
 }
-.information__imgwrapper h3 {}
+.information h2 {
+  margin-top: 46px;
+  margin-bottom: 20px;
+}

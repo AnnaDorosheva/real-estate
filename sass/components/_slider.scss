@@ -31,7 +31,7 @@
   justify-content: space-between;
 }
 .popular-slide__text {
-  padding: 0 4px;
+  padding: 0 8px;
 }
 .popular-slide__title {
   margin: 0;
@@ -46,6 +46,7 @@
 .popular-slide__labels {
   display: flex;
   flex-wrap: wrap;
+  padding: 0 8px;
   gap: 20px;
   @media (max-width: 660px) {justify-content: center;}
 }
@@ -55,8 +56,6 @@
   gap: 4px;
 }
 
-.popular__slider {
-}
 .swiper {
   overflow: hidden;
 }

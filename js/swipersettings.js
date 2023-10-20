@@ -3,7 +3,6 @@ const swiper = new Swiper(".js-popular-slider", {
     slidesPerView: 3,
     loop: true,
     speed: 1500,
-    // spaceBetween: 20,
 
     // If we need pagination
     pagination: {
@@ -17,8 +16,7 @@ const swiper = new Swiper(".js-popular-slider", {
       prevEl: ".swiper-button-prev",
     },
     // Autoplay
-  
-    // autoplay: { delay: 5000 },
+    autoplay: { delay: 5000 },
 
       // Default parameters
   slidesPerView: 1,
