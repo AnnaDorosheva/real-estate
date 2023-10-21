@@ -32,7 +32,7 @@ export default [
   {
     city: "Аланья",
     title: "Appartment",
-    img: "../../images/villa4.jpg",
+    img: "./images/villa4.jpg",
     description:
       "Новый проект ЖК, будет располагаться в одном из крупнейших районов Мерсина – Эрдемли. Жилой комплекс будет иметь огороженную.",
     price: 77000,
@@ -42,7 +42,7 @@ export default [
   {
     city: "Mersin",
     title: "Appartment",
-    img: "../../images/villa4.jpg",
+    img: "./images/villa4.jpg",
     description:
       "Новый проект ЖК, будет располагаться в одном из крупнейших районов Мерсина – Эрдемли. ",
     price: 77000,
@@ -52,7 +52,7 @@ export default [
   {
     city: "Мерсин",
     title: "Appartment",
-    img: "../../images/villa2.jpg",
+    img: "./images/villa2.jpg",
     description:
       "Новый проект ЖК, будет располагаться в одном из крупнейших районов Мерсина – Эрдемли. Жилой комплекс будет иметь огороженную и благоустроенную территорию.",
     price: 77000,
