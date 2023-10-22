@@ -15,14 +15,13 @@
   }
 }
 .card__item {
+  position: relative;
   width: 90%;
   padding: 6px;
-  // border: 2px solid gray;
   overflow: hidden;
   margin-bottom: 30px;
   overflow: hidden;
-  background-color: rgb(222, 232, 241);
-  // border-radius: 10px;
+  background-color: $card-color;
   box-shadow: 0px 4px 11px -1px rgba(34, 60, 80, 1.13);
   @media (min-width: 320px) {
     max-width: 90%;
@@ -71,4 +70,28 @@
   font-weight: 600;
   font-size: 24px;
 }
-.none {visibility: hidden;}
+.catalog__btn-next {
+  font-size: 20px;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  width: 180px;
+}
+.card__labels {
+  font-size: 12px;
+  margin: 4px;
+  margin-left: 8px;
+}
+.card__labels span {
+  margin: 4px;
+  margin-left: 4px;
+}
+.card__like {
+  position: absolute;
+  right: 6px;
+  top: 8px;
+  transition: transform 500ms ease;
+  &:hover {
+    transform: scale(1.15);
+  }
+}

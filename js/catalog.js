@@ -15,9 +15,7 @@ nextPageBtn.addEventListener("click", getNextPage);
 // Отрисовка первой страницы каталога / get first page catalog:
 
 function getCatalog() {
-  if (
-    catalog.length > COUNT_PAGE_NUMBER
-  ) {
+  if (catalog.length > COUNT_PAGE_NUMBER) {
     nextPageBtn.disabled = false;
   }
 
@@ -35,7 +33,14 @@ function createCards(data) {
     const { city, title, price, description, meters, img, id } = card;
 
     const cardItem = `        <li class="card__item" data-product-id=${id}>
-    <h3>${city}</h3>
+    <h3>${city}</h3>                   </div>
+    <div class="card__like">
+      <img
+        src="./images/love.png"
+        alt="like"
+        width="34"
+      />
+    </div>
    <div class="card__imgwraper"><img class="card__img" src="${img}"
    alt="like"
    width="300""/></div><h4 class="popular-slide__title">${title}</h4><div class="popular-slide__head">
@@ -47,9 +52,30 @@ function createCards(data) {
    </button>
    </div>
    
-   <p class="card__description">${description}<span>${meters}</span></p>
+   <p class="card__description">${description}<span>${meters}м.кв</span></p>
    <span>id: ${id}</span>
-   
+   <div class="popular-slide__labels card__labels">
+   <div class="popular-slide__label">
+     <img
+       src="./images/bedroom.png"
+       alt="like"
+       width="24"
+     /><span>Спален</span>
+   </div>
+   <div class="popular-slide__label">
+     <img src="./images/shower.png" alt="like" width="24" /><span
+       >санузлов</span
+     >
+   </div>
+   <div class="popular-slide__label">
+     <img
+     src="./images/measurement.png"
+       alt="like"
+       width="24"
+     /><span>площадь</span>
+   </div>
+ </div>
+</div>
    </li>`;
     wrapperCatalog.insertAdjacentHTML("beforeend", cardItem);
   });
@@ -69,5 +95,7 @@ function getNextPage() {
 
   shownCards = wrapperCatalog.children.length;
 
-  if(shownCards >= catalog.length) {nextPageBtn.disabled = true;}
-};
+  if (shownCards >= catalog.length) {
+    nextPageBtn.disabled = true;
+  }
+}

@@ -14,13 +14,16 @@
   }
 }
 .information__card {
-  width: 90%;
-  padding: 6px;
+  font-size: 24px;
+  color: $white-text-color;
+  font-weight: 600;
   border: 1px solid gray;
+  width: 90%;
   overflow: hidden;
   margin-bottom: 30px;
+  padding: 6px;
   overflow: hidden;
-  background-color: rgb(168, 167, 166);
+  background:  linear-gradient(to top, rgba(108, 121, 153, 0.7), rgba(62, 70, 94, 0.7)), url("../../images/bacg.jpg");
   border-radius: 10px;
   @media (min-width: 320px) {
     max-width: 90%;
