@@ -1,7 +1,12 @@
 import catalog from "./salesobjects.js";
 import makeCardMarckup from "./card-catalog.js";
+import {
+  showErrorMessage,
+  getBasketLocalStorage,
+  setBasketLocalStorage,
+} from "./utils.js";
+import { COUNT_PAGE_NUMBER, NO_HAVE_VARIANTS } from "./constants.js";
 
-const COUNT_PAGE_NUMBER = 9;
 let countNextPageCards = 1;
 let shownCards = COUNT_PAGE_NUMBER;
 
@@ -11,7 +16,7 @@ const nextPageBtn = document.querySelector(".catalog__btn-next");
 getCatalog();
 
 nextPageBtn.addEventListener("click", getNextPage);
-
+wrapperCatalog.addEventListener("click", handleCardClick);
 // Отрисовка первой страницы каталога / get first page catalog:
 
 function getCatalog() {
@@ -23,6 +28,9 @@ function getCatalog() {
 }
 
 function renderStartPageCatalog(data) {
+  if (!data || !data.length) {
+    showErrorMessage(NO_HAVE_VARIANTS);
+  }
   const arrCards = data.slice(0, COUNT_PAGE_NUMBER);
 
   createCards(arrCards);
@@ -32,11 +40,11 @@ function createCards(data) {
   data.forEach((card) => {
     const { city, title, price, description, meters, img, id } = card;
 
-    const cardItem = `        <li class="card__item" data-product-id=${id}>
+    const cardItem = `        <li class="card__item" data-productid=${id}>
     <h3>${city}</h3>                   </div>
-    <div class="card__like">
+    <div class="card__add">
       <img
-        src="./images/love.png"
+        src="./images/heart.png"
         alt="like"
         width="34"
       />
@@ -52,7 +60,7 @@ function createCards(data) {
    </button>
    </div>
    
-   <p class="card__description">${description}<span>${meters}м.кв</span></p>
+   <p class="card__description">${description}</p>
    <span>id: ${id}</span>
    <div class="popular-slide__labels card__labels">
    <div class="popular-slide__label">
@@ -72,7 +80,7 @@ function createCards(data) {
      src="./images/measurement.png"
        alt="like"
        width="24"
-     /><span>площадь</span>
+     /><span>${meters}м.кв</span>
    </div>
  </div>
 </div>
@@ -98,4 +106,19 @@ function getNextPage() {
   if (shownCards >= catalog.length) {
     nextPageBtn.disabled = true;
   }
+}
+
+//
+function handleCardClick(event) {
+  const targetButton = event.target.closest(".card__add");
+  if (!targetButton) return;
+
+  const card = targetButton.closest(".card__item");
+  const id = card.dataset.productid;
+  let basket = getBasketLocalStorage();
+  if (basket.includes(id)) return;
+
+  basket.push(id);
+  setBasketLocalStorage(basket);
+// console.log(basket)
 }

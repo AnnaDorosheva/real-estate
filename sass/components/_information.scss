@@ -14,9 +14,6 @@
   }
 }
 .information__card {
-  font-size: 24px;
-  color: $white-text-color;
-  font-weight: 600;
   border: 1px solid gray;
   width: 90%;
   overflow: hidden;
@@ -25,6 +22,10 @@
   overflow: hidden;
   background:  linear-gradient(to top, rgba(108, 121, 153, 0.7), rgba(62, 70, 94, 0.7)), url("../../images/bacg.jpg");
   border-radius: 10px;
+  transition: transform 500ms ease;
+  &:hover {
+    transform: scale(1.03);
+  }
   @media (min-width: 320px) {
     max-width: 90%;
   }
@@ -32,7 +33,10 @@
     max-width: 48%;
   }
 }
-.information h2 {
+.information__link {
+  font-size: 24px;
+  color: $white-text-color;
+  font-weight: 600;
   margin-top: 46px;
   margin-bottom: 20px;
 }

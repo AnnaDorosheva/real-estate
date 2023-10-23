@@ -17,12 +17,17 @@
         <button class="header__burger-btn js-burger">
           <span></span><span></span><span></span>
         </button>
-        <a href="#" class="logo"
-          ><img
-            class="logo__img"
-            src="images/currency_8193853.png"
-            width="100px"
-        /></a>
+        <div class="logo">
+          <img
+              class="logo__img"
+              src="images/currency_8193853.png"
+              width="100px"
+          />
+          <h1>Irina Estate</h1>
+        </div>
+<!-- Navigation -->
+
+<div><span class="basket__count">0</span><img src="./images/follow.png"></div>
         <nav class="menu">
           <ul class="menu__list">
             <li class="menu__item"><a href="#" class="menu__link">О нас</a></li>
@@ -300,26 +305,45 @@
       <ul class="information__wrapper">
         <li class="information__card">
           <div class="information__imgwrapper">
+            <a
+              class="information__link"
+              href="./html-pages/infirmation-page1.html"
+            >
+              <h3>Инвестиции</h3></a
+            >
             <!-- <img class="information__img" /> -->
-            <h3>Инвестиции</h3>
           </div>
         </li>
         <li class="information__card">
           <div class="information__imgwrapper">
+            <a
+              class="information__link"
+              href="./html-pages/infirmation-page1.html"
+            >
+              <h3>ВНЖ и Гражданство</h3></a
+            >
             <!-- <img class="information__img" /> -->
-            <h3>ВНЖ и Гражданство</h3>
           </div>
         </li>
         <li class="information__card">
           <div class="information__imgwrapper">
+            <a
+              class="information__link"
+              href="./html-pages/infirmation-page1.html"
+            >
+              <h3>Какую локацию выбрать для жизни</h3></a
+            >
             <!-- <img class="information__img" /> -->
-            <h3>Какую локацию выбрать для жизни</h3>
           </div>
         </li>
         <li class="information__card">
           <div class="information__imgwrapper">
+            <a
+              class="information__link"
+              href="./html-pages/infirmation-page1.html"
+              ><h3>Онлайн оформление сделок</h3></a
+            >
             <!-- <img class="information__img" /> -->
-            <h3>Онлайн оформдение сделок</h3>
           </div>
         </li>
       </ul>
@@ -382,6 +406,8 @@
     <script src="js/swiper.js"></script>
     <script defer src="js/main.js" type="module"></script>
     <script src="js/swipersettings.js"></script>
+    <script src="js/constants.js" type="module"></script>
+    <script src="js/utils.js" type="module"></script>
     <script src="js/catalog.js" type="module"></script>
     <script src="js/card-catalog.js" type="module"></script>
   </body>

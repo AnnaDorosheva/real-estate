@@ -12,15 +12,19 @@
   padding: 10px 20px;
 }
 .logo {
-  display: block;
-  max-width: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 400px;
   padding: 10px;
-
   &img {
     max-width: 100%;
   }
 }
-
+h1 {
+  width: 100px;
+  padding-left: 6px;
+}
 .menu__list {
   display: flex;
   align-items: center;

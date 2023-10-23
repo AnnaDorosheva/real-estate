@@ -280,12 +280,19 @@ a {
 }
 
 .logo {
-  display: block;
-  max-width: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 400px;
   padding: 10px;
 }
 .logoimg {
   max-width: 100%;
+}
+
+h1 {
+  width: 100px;
+  padding-left: 6px;
 }
 
 .menu__list {
@@ -625,13 +632,13 @@ a {
   margin-left: 4px;
 }
 
-.card__like {
+.card__add {
   position: absolute;
   right: 6px;
   top: 8px;
   transition: transform 500ms ease;
 }
-.card__like:hover {
+.card__add:hover {
   transform: scale(1.15);
 }
 
@@ -658,9 +665,6 @@ a {
 }
 
 .information__card {
-  font-size: 24px;
-  color: rgb(250, 248, 248);
-  font-weight: 600;
   border: 1px solid gray;
   width: 90%;
   overflow: hidden;
@@ -669,6 +673,10 @@ a {
   overflow: hidden;
   background: linear-gradient(to top, rgba(108, 121, 153, 0.7), rgba(62, 70, 94, 0.7)), url("../../images/bacg.jpg");
   border-radius: 10px;
+  transition: transform 500ms ease;
+}
+.information__card:hover {
+  transform: scale(1.03);
 }
 @media (min-width: 320px) {
   .information__card {
@@ -681,7 +689,10 @@ a {
   }
 }
 
-.information h2 {
+.information__link {
+  font-size: 24px;
+  color: rgb(250, 248, 248);
+  font-weight: 600;
   margin-top: 46px;
   margin-bottom: 20px;
 }
