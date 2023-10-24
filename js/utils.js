@@ -2,25 +2,36 @@
 
 export function showErrorMessage(message) {
   const h1 = document.querySelector(".catalog h2");
-  const img = (
-    `<div class="error">
+  const img = `<div class="error">
       <p>${message}</p>
       <a href="/index.html">Перейти к списку товаров</a>
       <p></p>
-    </div>`
-  );
+    </div>`;
   h1.insertAdjacentHTML("beforeend", img);
-};
+}
 
 export function getBasketLocalStorage() {
   const cardDataJSON = localStorage.getItem("basket");
-  console.log(cardDataJSON);
   return cardDataJSON ? JSON.parse(cardDataJSON) : [];
 }
 
 export function setBasketLocalStorage(basket) {
   const basketCount = document.querySelector(".basket__count");
   localStorage.setItem("basket", JSON.stringify(basket));
+  console.log(basket.length);
   basketCount.textContent = basket.length;
-  console.log(basket)
+}
+
+export function checkigRelevantCardsBusket(cardsData) {
+  const basket = getBasketLocalStorage();
+
+  basket.forEach((basketId, index) => {
+    const existsInCatalog = cardsData.some(
+      (item) => item.id === Number(basketId)
+    );
+    if (!existsInCatalog) {
+      basket.splice(index, 1);
+    }
+  });
+  setBasketLocalStorage(basket)
 }

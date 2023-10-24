@@ -34,6 +34,7 @@
   }
 }
 .card__item h3 {
+  text-align: start;
   font-size: 26px;
   margin: 8px;
 }
@@ -88,10 +89,41 @@
 }
 .card__add {
   position: absolute;
-  right: 6px;
-  top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  right: 0px;
+  top: 4px;
+  background-color: transparent;
+  border: none;
   transition: transform 500ms ease;
   &:hover {
     transform: scale(1.15);
+  }
+  &::before {
+    display: inline-block;
+    content: "";
+    background: url("../../images/heart.png");
+    margin-right: 6px;
+    height: 34px;
+    width: 34px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+.active {
+
+  &::before {
+    display: inline-block;
+    content: "";
+    background: url("../../images/love.png");
+    margin-right: 6px;
+    height: 34px;
+    width: 34px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 }

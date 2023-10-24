@@ -274,6 +274,7 @@ a {
 
 .header__container {
   display: flex;
+  position: relative;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
@@ -412,6 +413,17 @@ h1 {
     z-index: 3;
   }
 }
+.basket {
+  position: relative;
+}
+
+.basket__count {
+  position: absolute;
+  font-size: 18px;
+  color: red;
+  right: 4px;
+}
+
 .popular__container {
   padding: 0;
 }
@@ -570,6 +582,7 @@ h1 {
 }
 
 .card__item h3 {
+  text-align: start;
   font-size: 26px;
   margin: 8px;
 }
@@ -634,12 +647,41 @@ h1 {
 
 .card__add {
   position: absolute;
-  right: 6px;
-  top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  right: 0px;
+  top: 4px;
+  background-color: transparent;
+  border: none;
   transition: transform 500ms ease;
 }
 .card__add:hover {
   transform: scale(1.15);
+}
+.card__add::before {
+  display: inline-block;
+  content: "";
+  background: url("../../images/heart.png");
+  margin-right: 6px;
+  height: 34px;
+  width: 34px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.active::before {
+  display: inline-block;
+  content: "";
+  background: url("../../images/love.png");
+  margin-right: 6px;
+  height: 34px;
+  width: 34px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .information__wrapper {
