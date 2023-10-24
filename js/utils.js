@@ -1,5 +1,7 @@
 "use strict";
 
+// import {  ERROR_SERVER } from "./constants";
+
 export function showErrorMessage(message) {
   const h1 = document.querySelector(".catalog h2");
   const img = `<div class="error">
@@ -18,7 +20,7 @@ export function getBasketLocalStorage() {
 export function setBasketLocalStorage(basket) {
   const basketCount = document.querySelector(".basket__count");
   localStorage.setItem("basket", JSON.stringify(basket));
-  console.log(basket.length);
+
   basketCount.textContent = basket.length;
 }
 
@@ -33,5 +35,7 @@ export function checkigRelevantCardsBusket(cardsData) {
       basket.splice(index, 1);
     }
   });
-  setBasketLocalStorage(basket)
-}
+  setBasketLocalStorage(basket);
+};
+
+

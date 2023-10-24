@@ -40,7 +40,7 @@ function renderStartPageCatalog(data) {
 
   const basket = getBasketLocalStorage();
   checkingActiveButtons(basket);
-}
+};
 
 
 
@@ -58,7 +58,7 @@ function getNextPage() {
 
   const basket = getBasketLocalStorage();
   checkingActiveButtons(basket);
-  
+
   shownCards = wrapperCatalog.children.length;
 
   if (shownCards >= catalog.length) {

@@ -141,7 +141,13 @@ h1 {
 }
 .basket__count {
   position: absolute;
-  font-size: 18px;
-  color: red;
-  right: 4px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+  color: rgb(255, 89, 0);
+  width: 26px;
+  height: 26px;
+  background-color: aqua;
+  border-radius: 50%;
+  right: -8px;
 }
