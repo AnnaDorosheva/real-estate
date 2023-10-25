@@ -11,6 +11,8 @@ const basketPage = document.querySelector(".basket__wrapper");
 
 getProducts(catalog);
 
+basketPage.addEventListener("click", deleteCardBasket);
+
 function getProducts(arr) {
   loadProductBasket(arr);
 }
@@ -22,14 +24,13 @@ function loadProductBasket(data) {
     checkigRelevantCardsBusket(data);
   }
   const basket = getBasketLocalStorage();
-  console.log(basket)
 
   if (!basket || !basket.length) {
     showErrorMessage(NO_VARIANS_IN_BASKET);
   }
 
   const findProducts = data.filter((item) => basket.includes(String(item.id)));
-console.log()
+  console.log();
   if (!findProducts) {
     showErrorMessage(NO_VARIANS_IN_BASKET);
     return;
@@ -39,10 +40,10 @@ console.log()
 }
 
 function renderProductsBasket(card) {
-    card.forEach((card) => {
-        const { city, title, price, meters, img, id } = card;
-    
-        const cardItem = `        <li class="card__item" data-product-id="${id}">
+  card.forEach((card) => {
+    const { city, title, price, meters, img, id } = card;
+
+    const cardItem = `        <li class="card__item" data-product-id="${id}">
         <h3>${city}</h3>                   
         <button class="card__add">
     
@@ -81,8 +82,24 @@ function renderProductsBasket(card) {
          /><span>${meters}м.кв</span>
        </div>
      </div>
+     <button class="delete__card">Удалить</button>
        </li>`;
-    
-        basketPage.insertAdjacentHTML("beforeend", cardItem);
-      });
+
+    basketPage.insertAdjacentHTML("beforeend", cardItem);
+  });
+}
+
+function deleteCardBasket(event) {
+  const targetBtn = event.target.closest(".delete__card");
+  if(!targetBtn) return;
+
+  const card = event.target.closest(".card__item");
+  const id = card.dataset.productId;
+
+  const basket = getBasketLocalStorage();
+
+  const newBasket = basket.filter(item => item !== id);
+  console.log(newBasket)
+  setBasketLocalStorage(newBasket);
+  getProducts(catalog);
 }
