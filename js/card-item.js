@@ -1,19 +1,25 @@
-import { CARD_NOT_FOUND } from "./constants.js";
-import { checkigRelevantCardsBusket } from "./utils.js";
+import { CARD_NOT_FOUND, ERROR_SERVER } from "./constants.js";
+import { showErrorMessage } from "./utils.js";
 import catalog from "./salesobjects.js";
 
 const wrapper = document.querySelector(".js-card-item");
 
-getCard();
-function getCard() {
-  loadProductDetails(catalog);
-};
+getCard(catalog);
+
+function getCard(arr) {
+  if (!arr) {
+    showErrorMessage(ERROR_SERVER);
+    return;
+  };
+  loadProductDetails(arr);
+
+}
 
 export function getParamFromURL(parameter) {
   const urlParams = new URLSearchParams(window.location.search);
   console.log(urlParams);
   return urlParams.get(parameter);
-};
+}
 
 export function loadProductDetails(data) {
   if (!data || !data.length) {
@@ -25,17 +31,17 @@ export function loadProductDetails(data) {
   if (!cardId) {
     showErrorMessage(ERROR_SERVER);
     return;
-  };
+  }
 
   const findCard = data.find((item) => cardId === item.id);
 
   if (!cardId) {
     showErrorMessage(CARD_NOT_FOUND);
     return;
-  };
+  }
 
   renderInfoCard(findCard);
-};
+}
 
 function renderInfoCard(card) {
   const { city, title, price, description, meters, img, id } = card;
@@ -50,9 +56,7 @@ function renderInfoCard(card) {
    width="300"/></div><h4 class="popular-slide__title">${title}</h4><div class="popular-slide__head">
    <p class="card__price">${price}$</p>
    <button type="button" class="popular-slide__button" id="${id}">
-     <a href="card.html?id=${id}" class="popular-slide__page"
-       >Подробнее</a
-     >
+Напишите нам
    </button>
    </div>
    
@@ -84,12 +88,4 @@ function renderInfoCard(card) {
   wrapper.insertAdjacentHTML("beforeend", cardItem);
 }
 
-function showErrorMessage(message) {
-  const h2 = document.querySelector("h2");
-  const img = `<div class="error">
-        <p>${message}</p>
-        <a href="/index.html">Перейти к списку объектов</a>
-        <p></p>
-      </div>`;
-  h2.insertAdjacentHTML("beforeend", img);
-}
+

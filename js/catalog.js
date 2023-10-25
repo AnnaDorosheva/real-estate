@@ -4,7 +4,7 @@ import {
   showErrorMessage,
   getBasketLocalStorage,
   setBasketLocalStorage,
-  checkigRelevantCardsBusket
+  checkigRelevantCardsBusket,
 } from "./utils.js";
 import { COUNT_PAGE_NUMBER, NO_HAVE_VARIANTS } from "./constants.js";
 
@@ -40,9 +40,7 @@ function renderStartPageCatalog(data) {
 
   const basket = getBasketLocalStorage();
   checkingActiveButtons(basket);
-};
-
-
+}
 
 // Загрузка следующей страницы / get next page:
 function getNextPage() {
@@ -63,7 +61,7 @@ function getNextPage() {
 
   if (shownCards >= catalog.length) {
     nextPageBtn.disabled = true;
-  };
+  }
 }
 
 //LocalStorage for Likes
@@ -73,10 +71,10 @@ function handleCardClick(event) {
 
   const card = targetButton.closest(".card__item");
   const id = card.dataset.productId;
-console.log("KLICK");
+  console.log("KLICK");
   let basket = getBasketLocalStorage();
   if (basket.includes(id)) return;
- 
+
   basket.push(id);
   setBasketLocalStorage(basket);
   checkingActiveButtons(basket);
@@ -94,8 +92,7 @@ function checkingActiveButtons(basket) {
     btn.classList.toggle("active", isInBusket);
     btn.textContent = isInBusket ? "добвлено" : "добавить";
   });
-};
-
+}
 
 function createCards(data) {
   data.forEach((card) => {
@@ -106,9 +103,10 @@ function createCards(data) {
     <button class="card__add">
 
     </button>
-   <div class="card__imgwraper"><img class="card__img" src="${img}"
+   <div class="card__imgwraper"><a href="card.html?id=${id}" class="popular-slide__page"
+   ><img class="card__img" src="${img}"
    alt="like"
-   width="300"/></div><h4 class="popular-slide__title">${title}</h4><div class="popular-slide__head">
+   width="300"/></a></div><h4 class="popular-slide__title">${title}</h4><div class="popular-slide__head">
    <p class="card__price">${price}$</p>
    <button type="button" class="popular-slide__button" id="${id}">
      <a href="card.html?id=${id}" class="popular-slide__page"
@@ -141,10 +139,9 @@ function createCards(data) {
    </div>
  </div>
    </li>`;
-   
+
     wrapperCatalog.insertAdjacentHTML("beforeend", cardItem);
   });
-  
-};
+}
 
 getCatalog();

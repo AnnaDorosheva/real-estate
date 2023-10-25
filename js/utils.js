@@ -1,9 +1,7 @@
 "use strict";
 
-// import {  ERROR_SERVER } from "./constants";
-
 export function showErrorMessage(message) {
-  const h1 = document.querySelector(".catalog h2");
+  const h1 = document.querySelector("h1");
   const img = `<div class="error">
       <p>${message}</p>
       <a href="/index.html">Перейти к списку товаров</a>
@@ -27,9 +25,9 @@ export function setBasketLocalStorage(basket) {
 export function checkigRelevantCardsBusket(cardsData) {
   const basket = getBasketLocalStorage();
 
-  basket.forEach((basketId, index) => {
+  basket.forEach((cardId, index) => {
     const existsInCatalog = cardsData.some(
-      (item) => item.id === Number(basketId)
+      (item) => item.id === Number(cardId)
     );
     if (!existsInCatalog) {
       basket.splice(index, 1);
