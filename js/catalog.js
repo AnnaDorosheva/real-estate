@@ -77,7 +77,6 @@ function handleCardClick(event) {
 
   if (basket.includes(id)) {
     const newBasket = basket.filter((item) => item !== id);
-    console.log(newBasket);
     setBasketLocalStorage(newBasket);
     checkingActiveButtons(newBasket);
   } else {
