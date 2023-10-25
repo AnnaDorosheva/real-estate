@@ -1,5 +1,5 @@
 import { CARD_NOT_FOUND, ERROR_SERVER } from "./constants.js";
-import { showErrorMessage } from "./utils.js";
+import { showErrorMessage, checkigRelevantCardsBusket } from "./utils.js";
 import catalog from "./salesobjects.js";
 
 const wrapper = document.querySelector(".js-card-item");
@@ -32,6 +32,8 @@ export function loadProductDetails(data) {
     showErrorMessage(ERROR_SERVER);
     return;
   }
+
+  checkigRelevantCardsBusket(data);
 
   const findCard = data.find((item) => cardId === item.id);
 
