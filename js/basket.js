@@ -39,6 +39,21 @@ function loadProductBasket(data) {
   renderProductsBasket(findProducts);
 }
 
+export function deleteCardBasket(event) {
+    const targetBtn = event.target.closest(".delete__card");
+    if(!targetBtn) return;
+  
+    const card = event.target.closest(".card__item");
+    const id = card.dataset.productId;
+  
+    const basket = getBasketLocalStorage();
+  
+    const newBasket = basket.filter(item => item !== id);
+    console.log(newBasket)
+    setBasketLocalStorage(newBasket);
+    getProducts(catalog);
+  }
+
 function renderProductsBasket(card) {
   card.forEach((card) => {
     const { city, title, price, meters, img, id } = card;
@@ -89,17 +104,4 @@ function renderProductsBasket(card) {
   });
 }
 
-function deleteCardBasket(event) {
-  const targetBtn = event.target.closest(".delete__card");
-  if(!targetBtn) return;
 
-  const card = event.target.closest(".card__item");
-  const id = card.dataset.productId;
-
-  const basket = getBasketLocalStorage();
-
-  const newBasket = basket.filter(item => item !== id);
-  console.log(newBasket)
-  setBasketLocalStorage(newBasket);
-  getProducts(catalog);
-}

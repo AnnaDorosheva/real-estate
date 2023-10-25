@@ -13,6 +13,7 @@ let shownCards = COUNT_PAGE_NUMBER;
 
 const wrapperCatalog = document.querySelector(".catalog__wrapper");
 const nextPageBtn = document.querySelector(".catalog__btn-next");
+const addButton = document.querySelector(".card__add");
 
 nextPageBtn.addEventListener("click", getNextPage);
 wrapperCatalog.addEventListener("click", handleCardClick);
@@ -71,13 +72,24 @@ function handleCardClick(event) {
 
   const card = targetButton.closest(".card__item");
   const id = card.dataset.productId;
-  console.log("KLICK");
-  let basket = getBasketLocalStorage();
-  if (basket.includes(id)) return;
 
-  basket.push(id);
-  setBasketLocalStorage(basket);
-  checkingActiveButtons(basket);
+  let basket = getBasketLocalStorage();
+
+  if (basket.includes(id)) {
+    const newBasket = basket.filter((item) => item !== id);
+    console.log(newBasket);
+    setBasketLocalStorage(newBasket);
+    checkingActiveButtons(newBasket);
+  } else {
+    basket.push(id);
+    setBasketLocalStorage(basket);
+    checkingActiveButtons(basket);
+  }
+  // if (basket.includes(id)) return;
+
+  // basket.push(id);
+  // setBasketLocalStorage(basket);
+  // checkingActiveButtons(basket);
 }
 
 function checkingActiveButtons(basket) {
@@ -88,7 +100,6 @@ function checkingActiveButtons(basket) {
     const id = card.dataset.productId;
     const isInBusket = basket.includes(id);
 
-    btn.disabled = isInBusket;
     btn.classList.toggle("active", isInBusket);
     btn.textContent = isInBusket ? "добвлено" : "добавить";
   });
