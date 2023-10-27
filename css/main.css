@@ -755,4 +755,45 @@ h1 {
   width: 900px;
   background-color: azure;
   border: 1px solid gray;
+}
+
+.catalog {
+  max-width: 1400px;
+  padding: 20px;
+}
+
+.card__header {
+  display: flex;
+}
+
+.card__house,
+.basket {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 54px;
+  align-items: center;
+  margin-right: 20px;
+  transition: transform 500ms ease;
+}
+.card__house:hover,
+.basket:hover {
+  transform: scale(1.15);
+}
+
+.basket {
+  position: relative;
+}
+
+.basket__count {
+  left: 30px;
+  bottom: 40px;
+}
+
+.card {
+  display: flex;
+}
+
+.swiper {
+  max-width: 800px;
 }/*# sourceMappingURL=main.css.map */

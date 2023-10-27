@@ -1,0 +1,35 @@
+.catalog {
+  max-width: 1400px;
+  padding: 20px;
+}
+.card__header {
+  display: flex;
+}
+.card__house,
+.basket {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 54px;
+  align-items: center;
+  margin-right: 20px;
+  transition: transform 500ms ease;
+  &:hover {
+    transform: scale(1.15);
+  }
+}
+.basket {
+  position: relative;
+}
+.basket__count {
+  left: 30px;
+  bottom: 40px;
+}
+
+.card{display: flex; }
+// Swiper
+.swiper__container{}
+.swiper {
+  max-width: 800px;
+  
+}
