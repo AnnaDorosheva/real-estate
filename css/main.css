@@ -347,6 +347,7 @@ h1 {
   height: 40px;
   border: none;
   background-color: transparent;
+  bottom: 24px;
   z-index: 4;
 }
 
@@ -394,7 +395,7 @@ h1 {
     width: 350px;
     left: -350px;
     top: 0;
-    background-color: rgb(58, 86, 117);
+    background: linear-gradient(to top, rgba(108, 121, 153, 0.8), rgba(62, 70, 94, 0.7));
     padding: 75px 20px 20px 20px;
     transition: transform 0.5s;
   }
@@ -404,9 +405,10 @@ h1 {
   }
   .menu__link {
     display: block;
-    font-size: 20px;
-    padding: 10px 0px;
+    font-size: 24px;
     color: rgb(250, 248, 248);
+    font-weight: 600;
+    padding: 10px 0px;
   }
   .header.open .menu {
     transform: translateX(100%);
