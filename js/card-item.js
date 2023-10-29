@@ -1,5 +1,5 @@
 import { CARD_NOT_FOUND, ERROR_SERVER } from "./constants.js";
-import { showErrorMessage, checkigRelevantCardsBusket } from "./utils.js";
+import { showErrorMessage, checkigRelevantCardsBusket, getBasketLocalStorage, setBasketLocalStorage } from "./utils.js";
 import catalog from "./salesobjects.js";
 
 const wrapper = document.querySelector(".js-card-item");
@@ -13,6 +13,8 @@ function getCard(arr) {
     showErrorMessage(ERROR_SERVER);
     return;
   }
+  const basket = getBasketLocalStorage();
+  setBasketLocalStorage(basket);
   loadProductDetails(arr);
 }
 
@@ -48,7 +50,7 @@ export function loadProductDetails(data) {
 function renderInfoCard(card) {
   const { city, title, price, description, meters, img, imgArr, id } = card;
 
-  getCardImages(imgArr);
+  // getCardImages(imgArr);
   const cardItem = `        <li class="card__item" data-product-id="${id}">
     <h3>${city}</h3>                   
     <button class="card__add">
@@ -57,8 +59,8 @@ function renderInfoCard(card) {
    alt="like"
    width="300"/>                                                                                      </div><h4 class="popular-slide__title">${title}</h4><div class="popular-slide__head">
    <p class="card__price">${price}$</p>
-   <button type="button" class="popular-slide__button" id="${id}">
-Напишите нам
+   <button type="button" class="popular-slide__button" id="${id}"><a href="#">
+Напишите нам</a>
    </button>
    </div>
    
@@ -101,11 +103,3 @@ function getCardImages(images) {
   sliser.insertAdjacentHTML("afterbegin", it)
 };
 
-
-// const img = document.createElement("img");
-// img.style.width = 100 + "px";
-// img.style.heigth = 80 + "px";
-
-// img.alt = "";
-// img.src = image;
-// wrapper.append(img);

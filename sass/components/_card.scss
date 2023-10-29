@@ -26,10 +26,12 @@
   bottom: 40px;
 }
 
-.card{display: flex; }
+.card__big-size {
+  display: flex;
+  min-width: 0;
+}
 // Swiper
-.swiper__container{}
-.swiper {
+.swiper__container-card {
   max-width: 800px;
-  
+  margin-bottom: 120px;
 }

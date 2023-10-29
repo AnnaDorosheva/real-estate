@@ -790,10 +790,12 @@ h1 {
   bottom: 40px;
 }
 
-.card {
+.card__big-size {
   display: flex;
+  min-width: 0;
 }
 
-.swiper {
+.swiper__container-card {
   max-width: 800px;
+  margin-bottom: 120px;
 }/*# sourceMappingURL=main.css.map */
