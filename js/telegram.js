@@ -1,4 +1,5 @@
 "use strict";
+import {getParamFromURL} from "./card-item.js";
 
 const TELEGRAM_BOT_TOKEN = "6935673036:AAF8lPHK42jZko7gGrntvhV2fMDa03CLr_o";
 const TELEGRAM_CHAT_ID = "@RealEstateOrder1";
@@ -7,7 +8,7 @@ const API = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
 const form = document.querySelector(".form");
 form.addEventListener("submit", sendEmailTelegram);
 
-async function sendEmailTelegram(event) {
+export default async function sendEmailTelegram(event) {
   event.preventDefault();
   const form = event.target;
   const formBtn = document.querySelector(".form__submit-button button");
@@ -17,7 +18,8 @@ async function sendEmailTelegram(event) {
   const { name, message, email, phone } = Object.fromEntries(
     new FormData(form).entries()
   );
-  const text = `заявка от ${name} , тел: ${phone}, емейл: ${email}, тект: ${message}, id заявки: `;
+  const cardId = Number(getParamFromURL("id"));
+  const text = `заявка от ${name} , тел: ${phone}, емейл: ${email}, тект: ${message}, id заявки: ${cardId} `;
   console.log(name, message, email, phone);
 
   try {

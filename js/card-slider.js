@@ -1,67 +1,57 @@
 "use strict";
 
-import catalog from "./salesobjects.js";
+const sliderImages = document.querySelectorAll(".slider__img");
+const sliderLine = document.querySelector(".slider__line");
+const sliderDots = document.querySelectorAll(".slider__dot");
+const sliderBtnPrev = document.querySelector(".slider__btn-prev");
+const sliderBtnNext = document.querySelector(".slider__btn-next");
 
-const images = [
-  "villa1.jpg",
-  "villa2.jpg",
-  "villa3.jpg",
-  "villa4.jpg",
-  "villa5.jpg",
-  "villa41.jpg",
-];
+sliderBtnNext.addEventListener("click", nextSlide);
+sliderBtnPrev.addEventListener("click", prevSlide);
 
-const sliderPlase = document.querySelector(".slider__line");
+let sliderCount = 0;
+let sliderWidth;
 
-let activeImg = 0;
-let flag = true;
+window.addEventListener("resize", showSlide);
+function showSlide() {
+  sliderWidth = document.querySelector(".slider__cards").offsetWidth;
+  sliderLine.style.width = sliderWidth * sliderImages.length + "px";
 
-const inSlider = () => {
-  const img = document.createElement("img");
-  sliderPlase.style.width = 3 * sliderPlase.offsetWidth + "px";
-  sliderPlase.style.heigth = sliderPlase.offsetHeigth + "px";
-  sliderPlase.left = "-" + sliderPlase.offsetWidth + "px";
-  img.alt = "";
-  img.src = "../images/objects-imajes/img1/" + images[activeImg];
-  sliderPlase.append(img);
+  sliderImages.forEach((item) => (item.style.width = sliderWidth + "px"));
+  rollSlider();
+}
 
-  nextImgGenerate();
-  prevImgGenerate();
-};
-
-const nextImgGenerate = () => {
-  let nexImg = activeImg + 1;
-  if (nexImg >= images.length) nexImg = 0;
-  const img = document.createElement("img");
-  img.alt = "";
-  img.src = "../images/objects-imajes/img1/" + images[nexImg];
-  sliderPlase.append(img);
-};
-
-const prevImgGenerate = () => {
-  let prevImg = activeImg - 1;
-  if (prevImg < 0) prevImg === images.length - 1;
-
-  const img = document.createElement("img");
-  img.alt = "";
-  img.src = "../images/objects-imajes/img1/" + images[prevImg];
-  sliderPlase.prepend(img);
-};
+showSlide();
 
 function nextSlide() {
-  activeImg += 1;
-  if(activeImg > images.length) activeImg = 0;
-  document.querySelector(".slider__line img").remove()
-  nextImgGenerate();
+  sliderCount += 1;
+  if (sliderCount >= sliderImages.length) sliderCount = 0;
+
+  rollSlider();
+  activSlide(sliderCount);
 }
 
 function prevSlide() {
-  activeImg -= 1;
-  if(activeImg < 0) activeImg = images.length - 1;
-  prevImgGenerate();
-  document.querySelector(".slider__line img:last-child").remove()
-}
-inSlider();
+  sliderCount -= 1;
+  if (sliderCount < 0) sliderCount = sliderImages.length - 1;
 
-document.querySelector(".next__btn").addEventListener("click", nextSlide);
-document.querySelector(".prev__btn").addEventListener("click", prevSlide);
+  rollSlider();
+  activSlide(sliderCount);
+}
+
+function rollSlider() {
+  sliderLine.style.transform = `translateX(${-sliderCount * sliderWidth}px)`;
+}
+
+function activSlide(index) {
+  sliderDots.forEach((dot) => dot.classList.remove("active__dot"));
+  sliderDots[index].classList.add("active__dot");
+}
+
+sliderDots.forEach((dot, index) => {
+  dot.addEventListener("click", () => {
+    sliderCount = index;
+    rollSlider();
+    activSlide(sliderCount);
+  });
+});
